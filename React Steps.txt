@@ -1,0 +1,58 @@
+1- Make Dir and init NPM
+
+2- Install react and react-dom
+
+npm i -S react react-dom
+
+
+
+3- Install webpack , webpack-dev-server (container) and Transformation with babel (loader ,preset , react )
+
+npm i -D webpack webpack-cli webpack-dev-server html-webpack-plugin
+
+npm i -D babel-core babel-loader babel-preset-env babel-preset-react
+
+
+
+
+
+
+expression 
+===========
+<button 
+	className="square" 
+	onClick={props.onClick}>
+{props.value}
+</button>
+
+
+
+constructor
+============
+ constructor(props) {
+    super(props);
+    this.state = {
+      history: [{
+        squares: Array(9).fill(null)
+      }],
+      xIsNext: true
+    };
+  }
+  
+set state
+==========
+this.setState ( {squares: squares,
+                     xIsNext: !this.state.xIsNext
+                }
+              );
+//array 			  
+this.setState(
+	{
+      history: history.concat(
+		  [{
+			squares: squares
+		  }]
+	  ),
+      xIsNext: !this.state.xIsNext
+    }
+	);
